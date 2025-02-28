@@ -6,15 +6,15 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 17:18:56 by zlee              #+#    #+#             */
-/*   Updated: 2025/02/27 13:13:51 by zlee             ###   ########.fr       */
+/*   Updated: 2025/02/28 22:32:58 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	change_location(t_list **stack, enum e_loc loc)
+void	change_location(t_list **stack, enum e_stk loc)
 {
-	((t_d *)((*stack)->content))->location = loc;
+	((t_d *)((*stack)->content))->loc = loc;
 }
 
 int	get_number_node(t_list *s)
@@ -25,11 +25,6 @@ int	get_number_node(t_list *s)
 int	get_index(t_list *s)
 {
 	return ((int)((t_d *)(s->content))->index);
-}
-
-int	get_p(t_list *s)
-{
-	return ((int)((t_d *)(s->content))->p_num);
 }
 
 void	reindex_stack(t_list **stack_a, t_list **stack_b)

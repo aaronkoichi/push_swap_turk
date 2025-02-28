@@ -6,48 +6,35 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 14:48:39 by zlee              #+#    #+#             */
-/*   Updated: 2025/02/24 18:33:51 by zlee             ###   ########.fr       */
+/*   Updated: 2025/02/28 22:34:56 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-enum e_loc	get_location(t_list *stack)
+/*Gets the location of the node*/
+enum e_stk	get_location(t_list *stack)
 {
-	return (((t_d *)(stack->content))->location);
+	return (((t_d *)(stack->content))->loc);
 }
 
-int	get_par(t_list *stack)
+/*Gets the presorted number*/
+int	get_presort_num(t_list *stack)
 {
-	return (((t_d *)(stack->content))->p_num);
+	return (((t_d *)(stack->content))->pre_sort);
 }
 
-void	change_par(t_list **stack, int num)
+/*Access the node to write the pre-sorted number.*/
+void	set_presort_number(t_list **stack, t_list *node, int number)
 {
-	((t_d *)((*stack)->content))->p_num = num;
-}
-
-void	change_par_list(t_list **stack, int num)
-{
-	t_list	*head;
+	t_list *head;
 
 	head = *stack;
-	while (*stack != NULL)
+	while (*stack)
 	{
-		change_par(stack, num);
-		stack = &(*stack)->next;
+		if (get_number_node(*stack) == get_number_node(node))
+			((t_d *)((*stack)->content))->pre_sort = number;
+		*stack = (*stack)->next;
 	}
-	stack = &head;
-}
-
-void	change_location_lst(t_list **s, enum e_loc new, enum e_loc exist, int p)
-{
-	t_list	*head;
-	while(*s)
-	{
-		if (get_location(*s) == exist && get_par(*s) == p)
-			change_location(s, new);
-		s = &(*s)->next;
-	}
-	s = &head;
+	*stack = head;
 }
