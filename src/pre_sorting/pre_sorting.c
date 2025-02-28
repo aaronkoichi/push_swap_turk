@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 14:42:18 by zlee              #+#    #+#             */
-/*   Updated: 2025/02/28 22:33:43 by zlee             ###   ########.fr       */
+/*   Updated: 2025/02/28 23:08:49 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,17 @@ void	pre_sort(t_list **stack)
 
 	head = *stack;
 	temp = *stack;	
-	counter = 0;
 	while (temp)
 	{
+		counter = 0;
 		while (*stack)
 		{
-			if (get_number_node(temp) < get_number_node(stack))
+			if (get_number_node(temp) > get_number_node(*stack))
 				counter++;
 			(*stack) = (*stack)->next;
 		}
 		*stack = head;
-		temp = temp->next;
 		set_presort_number(stack, temp, counter);
+		temp = temp->next;
 	}
 }

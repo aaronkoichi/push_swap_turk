@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 18:26:17 by zlee              #+#    #+#             */
-/*   Updated: 2025/02/28 22:40:53 by zlee             ###   ########.fr       */
+/*   Updated: 2025/02/28 23:06:46 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void			sort_two_inv(t_list **s_a);
 void			sort_two_three(t_list **s_a);
 void			sort_three(t_list **s_a);
 /*data prepping*/
-void			change_location(t_list **stack, enum e_loc loc);
+void			change_location(t_list **stack, enum e_stk loc);
 void			reindex_stack(t_list **stack_a, t_list **stack_b);
 void			ft_swap(t_list **s1, t_list **s2);
 void			deter_rotate_stk(t_list **stk, t_list *target_n);
@@ -100,7 +100,7 @@ void			r_stk(t_list **stk, t_list *target_n);
 void			rr_stk(t_list **stk, t_list *target_n);
 /*checking*/
 int				is_sorted(t_list *s);
-enum e_loc		get_location(t_list *stack);
+enum e_stk		get_location(t_list *stack);
 int				get_par(t_list *stack);
 /*Turk Sort Functions*/
 void			print_each_partition(t_list *stacks);
@@ -111,4 +111,6 @@ char			**ft_split_extended(int argc, char **argv);
 void			push_swap(char **numbers);
 void			pre_sort(t_list **stack);
 void			set_presort_number(t_list **stack, t_list *node, int number);
+int				get_presort_num(t_list *stack);
+void			print_presort(t_list *sa);
 #endif

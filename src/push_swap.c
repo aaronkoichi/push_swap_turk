@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 18:31:49 by zlee              #+#    #+#             */
-/*   Updated: 2025/02/28 22:27:29 by zlee             ###   ########.fr       */
+/*   Updated: 2025/02/28 23:06:59 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	push_swap(char **n)
 		sort_two_three(&s_a);
 	else
 		;//recurse_do_swap(&s_a, &s_b, get_par(s_a), MID_A);
+	print_presort(s_a);
 	ft_lstclear(&s_a, free);
 	ft_lstclear(&s_b, free);
 }
