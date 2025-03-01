@@ -6,7 +6,7 @@
 #    By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/14 15:36:03 by zlee              #+#    #+#              #
-#    Updated: 2025/02/28 22:50:58 by zlee             ###   ########.fr        #
+#    Updated: 2025/03/01 23:04:57 by zlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,12 +22,16 @@ NODES_FOLDER = ./src/nodes
 
 SRC_FOLDER = ./src
 
+TURK_FOLDER = ./src/turk
+
 DATA_PREP = $(SRC_FOLDER)/data_prep/push_swap_prepare_data.c
 
 PARSING = $(PARSING_FOLDER)/push_swap_parsing_numbers_1.c \
           $(PARSING_FOLDER)/push_swap_parsing_numbers_2.c \
 
 NODES = $(NODES_FOLDER)/get_nodes.c \
+
+TURK =  $(TURK_FOLDER)/turk_sort_main.c
 
 SORTING = $(SORTING_FOLDER)/check_sorted.c \
 		  $(SORTING_FOLDER)/retrieve_data.c \
@@ -38,7 +42,7 @@ SORTING = $(SORTING_FOLDER)/check_sorted.c \
 		  $(SORTING_FOLDER)/optimize_sorting_operation.c \
 		  $(SORTING_FOLDER)/rotate.c \
 
-SRC = $(DATA_PREP) $(PARSING) $(SORTING) $(NODES) \
+SRC = $(DATA_PREP) $(PARSING) $(SORTING) $(NODES) $(TURK)\
 	  $(SRC_FOLDER)/push_swap.c \
 	  $(SRC_FOLDER)/push_swap_main.c \
 	  $(SRC_FOLDER)/push_swap_operation.c \
