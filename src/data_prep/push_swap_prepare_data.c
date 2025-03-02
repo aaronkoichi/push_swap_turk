@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 17:58:35 by zlee              #+#    #+#             */
-/*   Updated: 2025/02/28 22:35:44 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/02 14:55:38 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_d	*prep_data(int index, int numbers, enum e_stk loc)
 	data->num = numbers;
 	data->loc = loc;
 	data->pre_sort = -1;
+	data->moves = NULL;
 	return (data);
 }
 

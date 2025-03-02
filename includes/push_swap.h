@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 18:26:17 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/01 23:06:29 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/02 14:51:51 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_d
 	int			num;
 	enum e_stk	loc;
 	int			pre_sort;
+	t_list		*moves;
 }				t_d;
 
 /*Sorting*/
