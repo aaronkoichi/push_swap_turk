@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 18:26:17 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/02 14:51:51 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/02 23:26:35 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,4 +116,6 @@ int				get_presort_num(t_list *stack);
 void			print_presort(t_list *sa);
 void			split_push(t_list **sa, t_list **sb);
 void			turk_sort(t_list **sa, t_list **sb);
+void			determine_turk_sort(t_list **sa, t_list **sb);
+void			execute_push(t_list **sa, t_list **sb);
 #endif

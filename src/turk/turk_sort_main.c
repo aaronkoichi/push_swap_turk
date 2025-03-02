@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 22:43:57 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/01 23:12:33 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/02 23:17:12 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,10 @@ void	split_push(t_list **sa, t_list **sb)
 void	turk_sort(t_list **sa, t_list **sb)
 {
 	split_push(sa, sb);
+	while (*sb)
+	{
+		determine_turk_sort(sa, sb);
+		execute_push(sa, sb);
+	}
 	return ;
 }
