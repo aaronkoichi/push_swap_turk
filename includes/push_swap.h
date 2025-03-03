@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 18:26:17 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/03 07:44:56 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/03 19:35:03 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,4 +122,9 @@ int				find_middle(t_list *sa, t_list *node, t_list **dst1,
 					t_list **dst2);
 int				find_small(t_list *sa, t_list *node, t_list **dst);
 int				find_large(t_list *sa, t_list *node, t_list **dst);
+/*Instructions*/
+void			ra_instructions(t_list **sb, t_list *target);
+void			rra_instructions(t_list *sa, t_list **sb, t_list *target);
+void			rb_instructions(t_list **sb, t_list *target);
+void			rrb_instructions(t_list **sb, t_list *target);
 #endif

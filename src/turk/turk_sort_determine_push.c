@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 07:27:57 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/03 11:59:31 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/03 14:11:36 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*determine if there is a middle point for the node to be pushed.*/
 int	find_middle(t_list *sa, t_list *node, t_list **dst1, t_list **dst2)
 {
-	dst1 = sa;
+	*dst1 = sa;
 	*dst2 = sa->next; 
 
 	while (*dst1 && *dst2)
