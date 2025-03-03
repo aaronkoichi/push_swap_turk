@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 18:26:17 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/02 23:26:35 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/03 07:44:56 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,4 +118,8 @@ void			split_push(t_list **sa, t_list **sb);
 void			turk_sort(t_list **sa, t_list **sb);
 void			determine_turk_sort(t_list **sa, t_list **sb);
 void			execute_push(t_list **sa, t_list **sb);
+int				find_middle(t_list *sa, t_list *node, t_list **dst1,
+					t_list **dst2);
+int				find_small(t_list *sa, t_list *node, t_list **dst);
+int				find_large(t_list *sa, t_list *node, t_list **dst);
 #endif
