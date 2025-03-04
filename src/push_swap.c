@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 18:31:49 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/04 18:55:08 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/04 19:35:18 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	push_swap(char **n)
 	s_a = NULL;
 	s_b = NULL;
 	while (n[++i])
-		ft_lstadd_back(&s_a, ft_lstnew(prep_data(i, ft_atoi(n[i]), STK_A)));
+		ft_lstadd_back(&s_a, ft_lstnew(prep_data(i, ft_atoi(n[i]))));
 	pre_sort(&s_a);
 	if (ft_lstsize(s_a) == 3)
 		sort_two_three(&s_a);
