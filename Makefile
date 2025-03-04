@@ -6,7 +6,7 @@
 #    By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/14 15:36:03 by zlee              #+#    #+#              #
-#    Updated: 2025/03/01 23:04:57 by zlee             ###   ########.fr        #
+#    Updated: 2025/03/04 18:26:20 by zlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,8 +31,12 @@ PARSING = $(PARSING_FOLDER)/push_swap_parsing_numbers_1.c \
 
 NODES = $(NODES_FOLDER)/get_nodes.c \
 
-TURK =  $(TURK_FOLDER)/turk_sort_main.c
-
+TURK =  $(TURK_FOLDER)/turk_sort_main.c \
+		$(TURK_FOLDER)/turk_sort_determine_push.c \
+		$(TURK_FOLDER)/turk_sort_determine_rotate.c \
+		$(TURK_FOLDER)/turk_sort_operation.c \
+		$(TURK_FOLDER)/turk_sort_rotate_inst.c \
+		
 SORTING = $(SORTING_FOLDER)/check_sorted.c \
 		  $(SORTING_FOLDER)/retrieve_data.c \
 		  $(SORTING_FOLDER)/retrieve_data_2.c \
@@ -46,7 +50,7 @@ SRC = $(DATA_PREP) $(PARSING) $(SORTING) $(NODES) $(TURK)\
 	  $(SRC_FOLDER)/push_swap.c \
 	  $(SRC_FOLDER)/push_swap_main.c \
 	  $(SRC_FOLDER)/push_swap_operation.c \
-	  $(PRINTING_FOLDER)/print_list.c \
+	  $(PRINTING_FOLDER)/print_inst.c \
 	  $(SRC_FOLDER)/pre_sorting/pre_sorting.c \
 
 OBJS = $(SRC:.c=.o)

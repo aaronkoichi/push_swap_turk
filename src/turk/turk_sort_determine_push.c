@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 07:27:57 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/04 17:27:07 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/04 18:41:30 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,16 @@ int	find_middle(t_list *sa, t_list *node, t_list **dst2)
 
 	while (*dst1 && *dst2)
 	{
-		if (get_presort_num(node) < get_presort_num(*dst1)
-		&& get_presort_num(node) > get_presort_num(*dst2))
+		if (get_presort_num(node) > get_presort_num(*dst1)
+		&& get_presort_num(node) < get_presort_num(*dst2))
 			return (1);
 		*dst1 = (*dst1)->next;
 		*dst2 = (*dst2)->next;
 	}
 	*dst1 = sa;
 	*dst2 = ft_lstlast(sa);
-	if (get_presort_num(node) < get_presort_num(*dst1)
-	&& get_presort_num(node) > get_presort_num(*dst2))
+	if (get_presort_num(node) > get_presort_num(*dst1)
+	&& get_presort_num(node) < get_presort_num(*dst2))
 		return (1);
 	*dst1 = NULL;
 	*dst2 = NULL;
@@ -59,9 +59,9 @@ t_list	*find_large(t_list *stack)
 	t_list	*temp;
 
 	temp = stack;
-	while (stack)
+	while (stack)	
 	{
-		if (get_presort_num(temp) > get_presort_num(stack))
+		if (get_presort_num(temp) < get_presort_num(stack))
 			temp = stack;
 		stack = stack->next;
 	}

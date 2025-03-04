@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 14:20:22 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/04 17:41:55 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/04 18:43:23 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	determine_rotate_mid_small(t_list *sa, t_list **sb, t_list *target,
 	t_list	*head;
 
 	head = *sb;
-	mid_a = ft_lstsize(sa);
-	mid_b = ft_lstsize(*sb);
+	mid_a = ft_lstsize(sa) / 2;
+	mid_b = ft_lstsize(*sb) / 2;
 	while (get_presort_num(*sb) != get_presort_num(node))
 		(*sb) = (*sb)->next;
 	if (get_index(target) < mid_a)
@@ -33,7 +33,7 @@ void	determine_rotate_mid_small(t_list *sa, t_list **sb, t_list *target,
 		rb_instructions(sb, node);
 	else
 		rrb_instructions(head, sb, node);
-	ft_lstadd_back(((t_d *)((*sb)->content))->moves,
+	ft_lstadd_back(&((t_d *)((*sb)->content))->moves,
 		ft_lstnew(ft_strdup("pa\n")));
 	*sb = head;
 }
@@ -46,21 +46,21 @@ void	determine_rotate_large(t_list *sa, t_list **sb, t_list *target,
 	t_list	*head;
 
 	head = *sb;
-	mid_a = ft_lstsize(sa);
-	mid_b = ft_lstsize(*sb);
+	mid_a = ft_lstsize(sa) / 2;
+	mid_b = ft_lstsize(*sb) / 2;
 	while (get_presort_num(*sb) != get_presort_num(node))
 		(*sb) = (*sb)->next;
 	if (get_index(target) < mid_a)
 		ra_instructions(sb, target);
 	else
 		rra_instructions(sa, sb, target);
-	ft_lstadd_back(((t_d *)((*sb)->content))->moves,
+	ft_lstadd_back(&((t_d *)((*sb)->content))->moves,
 		ft_lstnew(ft_strdup("ra\n")));
 	if (get_index(node) < mid_b)
 		rb_instructions(sb, node);
 	else
 		rrb_instructions(head, sb, node);
-	ft_lstadd_back(((t_d *)((*sb)->content))->moves,
+	ft_lstadd_back(&((t_d *)((*sb)->content))->moves,
 		ft_lstnew(ft_strdup("pa\n")));
 	*sb = head;
 }

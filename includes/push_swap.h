@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 18:26:17 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/04 17:27:37 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/04 18:26:04 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,8 +127,10 @@ void			rra_instructions(t_list *sa, t_list **sb, t_list *target);
 void			rb_instructions(t_list **sb, t_list *node);
 void			rrb_instructions(t_list *stack, t_list **sb, t_list *node);
 /**/
-void			determine_rotate_mid_big(t_list *sa, t_list **sb,
+void			determine_rotate_mid_small(t_list *sa, t_list **sb,
 					t_list *target, t_list *node);
-void			determine_rotate_small(t_list *sa, t_list **sb, t_list *target,
+void			determine_rotate_large(t_list *sa, t_list **sb, t_list *target,
 					t_list *node);
+/*Printing (for debug only)*/
+void			print_each_instructions(t_list *stack);
 #endif
