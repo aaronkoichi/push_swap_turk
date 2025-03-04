@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 19:14:59 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/04 19:25:00 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/04 20:09:21 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	execute_push(t_list **sa, t_list **sb, t_list *node)
 	instructions = data->moves;
 	while (instructions)
 	{
-		node_excecution(sa, sb, instructions);
+		node_execution(sa, sb, instructions);
 		instructions = instructions->next;
 	}	
 	return ;
@@ -33,26 +33,26 @@ void	node_execution(t_list **sa, t_list **sb, t_list *inst)
 	char	*command;
 
 	command = (char *)inst->content;
-	if (command == "ra\n")
+	if (!ft_strncmp(command, "ra\n", 3))
 		r_stack(sa);
-	else if (command == "rb\n")
+	else if (!ft_strncmp(command, "rb\n", 3))
 		r_stack(sb);
-	else if (command == "rr\n")
+	else if (!ft_strncmp(command, "rr\n", 3))
 	{
 		r_stack(sa);
 		r_stack(sb);
 	}
-	else if (command == "rra\n")
+	else if (!ft_strncmp(command, "rra\n", 4))
 		rr_stack(sa);
-	else if (command == "rrb\n")
+	else if (!ft_strncmp(command, "rrb\n", 4))
 		rr_stack(sb);
-	else if (command == "rrr\n")
+	else if (!ft_strncmp(command, "rrr\n", 4))
 	{
 		rr_stack(sa);
 		rr_stack(sb);
 	}
 	else
-		node_excecution_two(sa, sb, inst);
+		node_execution_two(sa, sb, inst);
 }
 
 void	node_execution_two(t_list **sa, t_list **sb, t_list *inst)
@@ -60,19 +60,19 @@ void	node_execution_two(t_list **sa, t_list **sb, t_list *inst)
 	char	*command;
 
 	command = (char *)inst->content;
-	if (command == "pa\n")
+	if (!ft_strncmp(command, "pb\n", 3))
 		p_stack(sb, sa);
-	else if (command == "pb\n")
+	else if (!ft_strncmp(command, "pa\n", 3))
 		p_stack(sa, sb);
-	else if (command == "sa\n")
+	else if (!ft_strncmp(command, "sa\n", 3))
 		s_stack(sa);
-	else if (command == "sb\n")
+	else if (!ft_strncmp(command, "sb\n", 3))
 		s_stack(sb);
-	else if (command == "ss\n")
+	else if (!ft_strncmp(command, "ss\n", 3))
 	{
 		s_stack(sa);
 		s_stack(sb);
 	}
 	else
-		return ;
+		ft_printf("Not Working\n");
 }

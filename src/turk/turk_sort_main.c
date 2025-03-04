@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 22:43:57 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/04 19:10:50 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/04 20:11:44 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,21 @@ void	turk_sort(t_list **sa, t_list **sb)
 	reindex_stack(sa, sb);
 	determine_turk_sort(sa, sb);
 	node = find_cheapest(*sb);
-	print_each_instructions(*sb);
+	execute_push(sa, sb, node);
+	reindex_stack(sa, sb);
 	free_moves(sb);
-	
+	free_moves(sa);
+	determine_turk_sort(sa, sb);
+	node = find_cheapest(*sb);
+	execute_push(sa, sb, node);
+	reindex_stack(sa, sb);
 	// while (*sb)
 	// {
 	// 	determine_turk_sort(sa, sb);
-	// 	execute_push(sa, sb);
+	// 	node = find_cheapest(*sb);
+	// 	execute_push(sa, sb, node);
 	// 	reindex_stack(sa, sb);
+
 	// }
 	return ;
 }

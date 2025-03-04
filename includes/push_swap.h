@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 18:26:17 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/04 19:34:29 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/04 19:58:57 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,17 @@
 # define PUSH_SWAP_H
 # include "../libft/libft.h"
 
-
+enum			e_stk
+{
+	STK_A,
+	STK_B
+};
 
 typedef struct s_d
 {
 	int			index;
 	int			num;
+	enum e_stk	loc;
 	int			pre_sort;
 	t_list		*moves;
 }				t_d;
@@ -55,6 +60,7 @@ void			r_stk(t_list **stk, t_list *target_n);
 void			rr_stk(t_list **stk, t_list *target_n);
 /*checking*/
 int				is_sorted(t_list *s);
+void			change_location(t_list **stack, enum e_stk loc);
 enum e_stk		get_location(t_list *stack);
 int				get_par(t_list *stack);
 /*Turk Sort Functions*/
@@ -73,6 +79,7 @@ void			turk_sort(t_list **sa, t_list **sb);
 void			determine_turk_sort(t_list **sa, t_list **sb);
 void			execute_push(t_list **sa, t_list **sb, t_list *node);
 void			node_execution(t_list **sa, t_list **sb, t_list *inst);
+void			node_execution_two(t_list **sa, t_list **sb, t_list *inst);
 int				find_middle(t_list *sa, t_list *node, t_list **dst2);
 t_list			*find_small(t_list *stack);
 t_list			*find_large(t_list *stack);

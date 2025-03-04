@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 13:20:15 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/01 22:59:33 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/04 19:52:59 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,7 @@ void	rr_stack(t_list **stacks)
 	if (!stacks || !*stacks || !(*stacks)->next)
 		return ;
 
-	if (get_location(*stacks) == TOP_A || get_location(*stacks) == MID_A
-		|| get_location(*stacks) == BOT_A)
+	if (get_location(*stacks) == STK_A)
 		ft_printf("rra\n");
 	else
 		ft_printf("rrb\n");

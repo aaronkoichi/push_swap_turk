@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 17:18:56 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/04 19:38:59 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/04 19:57:26 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,3 +65,13 @@ void	set_presort_number(t_list **stack, t_list *node, int number)
 	*stack = head;
 }
 
+/*PLEASE DELETE THIS AND CHANGE THIS*/
+void	change_location(t_list **stack, enum e_stk loc)
+{
+	((t_d *)((*stack)->content))->loc = loc;
+}
+
+enum e_stk	get_location(t_list *stack)
+{
+	return (((t_d *)(stack->content))->loc);
+}

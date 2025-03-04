@@ -6,7 +6,7 @@
 #    By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/14 15:36:03 by zlee              #+#    #+#              #
-#    Updated: 2025/03/04 18:54:32 by zlee             ###   ########.fr        #
+#    Updated: 2025/03/04 19:49:09 by zlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ SORTING_FOLDER = ./src/sorting
 
 PRINTING_FOLDER = ./src/printing
 
-NODES_FOLDER = ./src/nodes
 
 SRC_FOLDER = ./src
 
@@ -29,25 +28,19 @@ DATA_PREP = $(SRC_FOLDER)/data_prep/push_swap_prepare_data.c
 PARSING = $(PARSING_FOLDER)/push_swap_parsing_numbers_1.c \
           $(PARSING_FOLDER)/push_swap_parsing_numbers_2.c \
 
-NODES = $(NODES_FOLDER)/get_nodes.c \
-
 TURK =  $(TURK_FOLDER)/turk_sort_main.c \
 		$(TURK_FOLDER)/turk_sort_determine_push.c \
 		$(TURK_FOLDER)/turk_sort_determine_rotate.c \
 		$(TURK_FOLDER)/turk_sort_operation.c \
 		$(TURK_FOLDER)/turk_sort_rotate_inst.c \
 		$(TURK_FOLDER)/turk_sort_moves.c \
-		
+		$(TURK_FOLDER)/turk_sort_execution.c \
+
 SORTING = $(SORTING_FOLDER)/check_sorted.c \
 		  $(SORTING_FOLDER)/retrieve_data.c \
-		  $(SORTING_FOLDER)/retrieve_data_2.c \
-		  $(SORTING_FOLDER)/sorting_operation_a.c \
-		  $(SORTING_FOLDER)/sorting_operation_b.c \
 		  $(SORTING_FOLDER)/sort_two_three.c \
-		  $(SORTING_FOLDER)/optimize_sorting_operation.c \
-		  $(SORTING_FOLDER)/rotate.c \
 
-SRC = $(DATA_PREP) $(PARSING) $(SORTING) $(NODES) $(TURK)\
+SRC = $(DATA_PREP) $(PARSING) $(SORTING) $(TURK)\
 	  $(SRC_FOLDER)/push_swap.c \
 	  $(SRC_FOLDER)/push_swap_main.c \
 	  $(SRC_FOLDER)/push_swap_operation.c \
