@@ -6,15 +6,17 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 07:27:57 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/03 14:11:36 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/04 17:27:07 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
 /*determine if there is a middle point for the node to be pushed.*/
-int	find_middle(t_list *sa, t_list *node, t_list **dst1, t_list **dst2)
+int	find_middle(t_list *sa, t_list *node, t_list **dst2)
 {
+	t_list	**dst1;
+
 	*dst1 = sa;
 	*dst2 = sa->next; 
 
@@ -32,34 +34,36 @@ int	find_middle(t_list *sa, t_list *node, t_list **dst1, t_list **dst2)
 	&& get_presort_num(node) > get_presort_num(*dst2))
 		return (1);
 	*dst1 = NULL;
-	*dst2= NULL;
+	*dst2 = NULL;
 	return (0);
 }
 
 /*Used when unable to find the middle point to push the number.*/
-int	find_small(t_list *sa, t_list *node, t_list **dst)
+t_list	*find_small(t_list *stack)
 {
-	dst = sa;
-	while (dst)
+	t_list	*temp;
+
+	temp = stack;
+	while (stack)
 	{
-		if (get_presort_num(node) < get_presort_num(*dst))
-			return (1);
-		*dst = (*dst)->next;
+		if (get_presort_num(temp) > get_presort_num(stack))
+			temp = stack;
+		stack = stack->next;
 	}
-	dst = NULL;
-	return (0);
+	return (temp);
 }
 
 /*Used when unable to find the middle point to push the number.*/
-int	find_large(t_list *sa, t_list *node, t_list **dst)
+t_list	*find_large(t_list *stack)
 {
-	dst = sa;
-	while (dst)
+	t_list	*temp;
+
+	temp = stack;
+	while (stack)
 	{
-		if (get_presort_num(node) > get_presort_num(*dst))
-			return (1);
-		*dst = (*dst)->next;
+		if (get_presort_num(temp) > get_presort_num(stack))
+			temp = stack;
+		stack = stack->next;
 	}
-	dst = NULL;
-	return (0);
+	return (temp);
 }

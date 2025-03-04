@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 18:26:17 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/03 19:35:03 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/04 17:27:37 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,13 +118,17 @@ void			split_push(t_list **sa, t_list **sb);
 void			turk_sort(t_list **sa, t_list **sb);
 void			determine_turk_sort(t_list **sa, t_list **sb);
 void			execute_push(t_list **sa, t_list **sb);
-int				find_middle(t_list *sa, t_list *node, t_list **dst1,
-					t_list **dst2);
-int				find_small(t_list *sa, t_list *node, t_list **dst);
-int				find_large(t_list *sa, t_list *node, t_list **dst);
+int				find_middle(t_list *sa, t_list *node, t_list **dst2);
+t_list			*find_small(t_list *stack);
+t_list			*find_large(t_list *stack);
 /*Instructions*/
 void			ra_instructions(t_list **sb, t_list *target);
 void			rra_instructions(t_list *sa, t_list **sb, t_list *target);
-void			rb_instructions(t_list **sb, t_list *target);
-void			rrb_instructions(t_list **sb, t_list *target);
+void			rb_instructions(t_list **sb, t_list *node);
+void			rrb_instructions(t_list *stack, t_list **sb, t_list *node);
+/**/
+void			determine_rotate_mid_big(t_list *sa, t_list **sb,
+					t_list *target, t_list *node);
+void			determine_rotate_small(t_list *sa, t_list **sb, t_list *target,
+					t_list *node);
 #endif
