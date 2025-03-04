@@ -6,16 +6,11 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 17:18:56 by zlee              #+#    #+#             */
-/*   Updated: 2025/02/28 22:32:58 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/04 19:38:59 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-
-void	change_location(t_list **stack, enum e_stk loc)
-{
-	((t_d *)((*stack)->content))->loc = loc;
-}
 
 int	get_number_node(t_list *s)
 {
@@ -48,3 +43,25 @@ void	reindex_stack(t_list **stack_a, t_list **stack_b)
 	}
 	stack_b = &head;
 }
+
+/*Gets the presorted number*/
+int	get_presort_num(t_list *stack)
+{
+	return (((t_d *)(stack->content))->pre_sort);
+}
+
+/*Access the node to write the pre-sorted number.*/
+void	set_presort_number(t_list **stack, t_list *node, int number)
+{
+	t_list *head;
+
+	head = *stack;
+	while (*stack)
+	{
+		if (get_number_node(*stack) == get_number_node(node))
+			((t_d *)((*stack)->content))->pre_sort = number;
+		*stack = (*stack)->next;
+	}
+	*stack = head;
+}
+
