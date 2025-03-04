@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 19:14:59 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/04 20:09:21 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/04 21:49:21 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,5 @@ void	node_execution_two(t_list **sa, t_list **sb, t_list *inst)
 		s_stack(sb);
 	}
 	else
-		ft_printf("Not Working\n");
+		ft_printf("Not Working: %s\n", command);
 }

@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 13:20:15 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/04 19:52:59 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/04 22:05:03 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	p_stack(t_list	**s_a, t_list	**s_b)
 	 }
 	else
 	{
-		change_location(s_a, STK_A);
+		change_location(s_b, STK_A);
 		ft_printf("pa\n");
 	}
 	if ((*s_b)->next == NULL)

@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   turk_sort_moves.c                                  :+:      :+:    :+:   */
+/*   turk_sort_rotate_all.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/04 18:46:52 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/04 21:30:45 by zlee             ###   ########.fr       */
+/*   Created: 2025/03/04 22:12:43 by zlee              #+#    #+#             */
+/*   Updated: 2025/03/04 22:14:22 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	free_moves(t_list **stack)
+void	r_all(t_list **stack, t_list *head)
 {
-	t_list	*head;
-	t_list	*presort;
+	while (get_number_node(head) != get_number_node(*stack))
+		r_stack(stack);
+}
 
-	head = *stack;
-	while (*stack)
-	{
-		presort = ((t_d *)((*stack)->content))->moves;
-		if (presort)
-		{
-			ft_lstclear(&presort, free);
-			((t_d *)((*stack)->content))->moves = NULL; 
-		}
-		*stack = (*stack)->next;
-	}
-	*stack = head;
+void	rr_all(t_list **stack, t_list *head)
+{
+	while (get_number_node(head) != get_number_node(*stack))
+		rr_stack(stack);
 }

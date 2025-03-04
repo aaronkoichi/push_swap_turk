@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 22:43:57 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/04 20:11:44 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/04 22:16:48 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,26 +37,23 @@ void	split_push(t_list **sa, t_list **sb)
 void	turk_sort(t_list **sa, t_list **sb)
 {
 	t_list *node;
-	
+	int		size;
+
+	size = ft_lstsize(*sa) / 2;
 	split_push(sa, sb);
 	reindex_stack(sa, sb);
-	determine_turk_sort(sa, sb);
-	node = find_cheapest(*sb);
-	execute_push(sa, sb, node);
-	reindex_stack(sa, sb);
-	free_moves(sb);
-	free_moves(sa);
-	determine_turk_sort(sa, sb);
-	node = find_cheapest(*sb);
-	execute_push(sa, sb, node);
-	reindex_stack(sa, sb);
-	// while (*sb)
-	// {
-	// 	determine_turk_sort(sa, sb);
-	// 	node = find_cheapest(*sb);
-	// 	execute_push(sa, sb, node);
-	// 	reindex_stack(sa, sb);
-
-	// }
-	return ;
+	while (*sb)
+	{
+		determine_turk_sort(sa, sb);
+		node = find_cheapest(*sb);
+		execute_push(sa, sb, node);
+		free_moves(sb);
+		free_moves(sa);
+		reindex_stack(sa, sb);
+	}
+	node = find_small(*sa);
+	if (get_index(node) < size)
+		r_all(sa, node);
+	else
+		rr_all(sa, node);
 }

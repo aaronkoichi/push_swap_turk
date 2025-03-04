@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 18:26:17 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/04 19:58:57 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/04 22:14:46 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ t_list			*find_small(t_list *stack);
 t_list			*find_large(t_list *stack);
 void			free_moves(t_list **stack);
 t_list			*find_cheapest(t_list *stack);
+void			r_all(t_list **stack, t_list *head);
+void			rr_all(t_list **stack, t_list *head);
 /*Instructions*/
 void			ra_instructions(t_list **sb, t_list *target);
 void			rra_instructions(t_list *sa, t_list **sb, t_list *target);

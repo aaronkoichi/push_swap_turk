@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 07:27:57 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/04 18:41:30 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/04 21:58:01 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,25 @@
 /*determine if there is a middle point for the node to be pushed.*/
 int	find_middle(t_list *sa, t_list *node, t_list **dst2)
 {
-	t_list	**dst1;
+	t_list	*dst1;
 
-	*dst1 = sa;
+	dst1 = sa;
 	*dst2 = sa->next; 
 
-	while (*dst1 && *dst2)
+	while (dst1 && *dst2)
 	{
-		if (get_presort_num(node) > get_presort_num(*dst1)
+		if (get_presort_num(node) > get_presort_num(dst1)
 		&& get_presort_num(node) < get_presort_num(*dst2))
 			return (1);
-		*dst1 = (*dst1)->next;
+		dst1 = (dst1)->next;
 		*dst2 = (*dst2)->next;
 	}
-	*dst1 = sa;
-	*dst2 = ft_lstlast(sa);
-	if (get_presort_num(node) > get_presort_num(*dst1)
+	dst1 = ft_lstlast(sa);
+	*dst2 = sa;
+	if (get_presort_num(node) > get_presort_num(dst1)
 	&& get_presort_num(node) < get_presort_num(*dst2))
 		return (1);
-	*dst1 = NULL;
+	dst1 = NULL;
 	*dst2 = NULL;
 	return (0);
 }
