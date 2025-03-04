@@ -6,7 +6,7 @@
 #    By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/14 15:36:03 by zlee              #+#    #+#              #
-#    Updated: 2025/03/04 18:26:20 by zlee             ###   ########.fr        #
+#    Updated: 2025/03/04 18:54:32 by zlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ TURK =  $(TURK_FOLDER)/turk_sort_main.c \
 		$(TURK_FOLDER)/turk_sort_determine_rotate.c \
 		$(TURK_FOLDER)/turk_sort_operation.c \
 		$(TURK_FOLDER)/turk_sort_rotate_inst.c \
+		$(TURK_FOLDER)/turk_sort_moves.c \
 		
 SORTING = $(SORTING_FOLDER)/check_sorted.c \
 		  $(SORTING_FOLDER)/retrieve_data.c \

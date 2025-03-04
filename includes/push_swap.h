@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 18:26:17 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/04 18:26:04 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/04 18:54:14 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,4 +133,5 @@ void			determine_rotate_large(t_list *sa, t_list **sb, t_list *target,
 					t_list *node);
 /*Printing (for debug only)*/
 void			print_each_instructions(t_list *stack);
+void			free_moves(t_list **stack);
 #endif

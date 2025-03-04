@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   turk_sort_moves.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/08 18:31:49 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/04 18:55:08 by zlee             ###   ########.fr       */
+/*   Created: 2025/03/04 18:46:52 by zlee              #+#    #+#             */
+/*   Updated: 2025/03/04 18:53:17 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-void	push_swap(char **n)
+void	free_moves(t_list **stack)
 {
-	t_list	*s_a;
-	t_list	*s_b;
-	t_d		*temp_data;
-	int		i;
+	t_list	*head;
+	t_d		*data;
+	t_list	*presort;
 
-	i = -1;
-	s_a = NULL;
-	s_b = NULL;
-	while (n[++i])
-		ft_lstadd_back(&s_a, ft_lstnew(prep_data(i, ft_atoi(n[i]), STK_A)));
-	pre_sort(&s_a);
-	if (ft_lstsize(s_a) == 3)
-		sort_two_three(&s_a);
-	else
-		turk_sort(&s_a, &s_b);
-	ft_lstclear(&s_a, free);
-	ft_lstclear(&s_b, free);
+	head = *stack;
+	while (*stack)
+	{
+		data = (t_d *)((*stack)->content);
+		presort = data->moves;
+		if (presort)
+		{
+			ft_lstclear(&presort, free);
+			data->moves = NULL;
+		}
+		*stack = (*stack)->next;
+	}
+	*stack = head;
 }
