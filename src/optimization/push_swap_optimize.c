@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 13:50:41 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/05 15:45:08 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/05 16:11:24 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ void	optimize_instructions(t_list **inst)
 		ft_lstadd_back(new_list, checkpoint);
 		(*inst) = (*inst)->next;
 	}
+	ft_lstclear(inst, free);
+	*inst = new_list;
 }
 
 t_list	*assign_inst_rr_rrr(int *rolling_a, int *rolling_b)
