@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 18:46:52 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/04 21:30:45 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/05 13:48:43 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	free_moves(t_list **stack)
 		if (presort)
 		{
 			ft_lstclear(&presort, free);
-			((t_d *)((*stack)->content))->moves = NULL; 
+			((t_d *)((*stack)->content))->moves = NULL;
 		}
 		*stack = (*stack)->next;
 	}

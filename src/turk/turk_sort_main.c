@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 22:43:57 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/04 22:16:48 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/05 13:48:28 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	split_push(t_list **sa, t_list **sb)
 
 void	turk_sort(t_list **sa, t_list **sb)
 {
-	t_list *node;
+	t_list	*node;
 	int		size;
 
 	size = ft_lstsize(*sa) / 2;
