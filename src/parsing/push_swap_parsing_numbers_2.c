@@ -6,20 +6,20 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 22:09:12 by zlee              #+#    #+#             */
-/*   Updated: 2025/01/14 15:43:28 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/05 09:32:27 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft/libft.h"
 #include "../../includes/push_swap.h"
+#include "../../libft/libft.h"
 
 int	check_dup(char **argv)
 {
 	char	**temp;
-	int	 	i;
+	int		i;
 	int		j;
 
-	temp = &*argv;
+	temp = argv;
 	j = -1;
 	while (argv[++j])
 	{
@@ -33,4 +33,23 @@ int	check_dup(char **argv)
 		}
 	}
 	return (0);
+}
+
+int	check_sign(char **numbers)
+{
+	int		i;
+	int		j;
+	char	**temp;
+	int		sign;
+
+	sign = 0;
+	temp = numbers;
+	i = -1;
+	while (temp[++i])
+	{
+		if ((temp[i][0] == '+' || temp[i][0] == '-') && (temp[i][1] != 0
+				&& (temp[i][1] < '0' || temp[i][1] > '9')))
+			return (0);
+	}
+	return (1);
 }

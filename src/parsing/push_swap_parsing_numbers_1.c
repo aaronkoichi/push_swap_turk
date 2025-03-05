@@ -6,12 +6,12 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 22:09:12 by zlee              #+#    #+#             */
-/*   Updated: 2025/01/14 15:48:37 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/05 09:32:39 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft/libft.h"
 #include "../../includes/push_swap.h"
+#include "../../libft/libft.h"
 
 int	num_check(char *string)
 {
@@ -22,14 +22,16 @@ int	num_check(char *string)
 	word_count = 0;
 	while (*string != 0)
 	{
-		if (*string >= '0' && *string <= '9' && !in_words)
+		if ((*string == '-' || *string == '+' || (*string >= '0'
+					&& *string <= '9')) && !in_words)
 		{
 			in_words = 1;
 			word_count++;
 		}
 		else if (*string == ' ' && in_words)
 			in_words = 0;
-		if ((*string < '0' || *string > '9') && *string != ' ')
+		if ((*string < '0' || *string > '9') && *string != ' ' && *string != '-'
+			&& *string != '+')
 			return (-1);
 		string++;
 	}
@@ -87,19 +89,23 @@ int	input_check(int argc, char **argv)
 char	**ft_split_extended(int argc, char **argv)
 {
 	char	*temp;
+	char	*numbers;
 	char	**splitted;
 	int		i;
 
-	temp = argv[1];
-	i = 1;
+	temp = NULL;
+	numbers = ft_strdup("");
+	i = 0;
 	while (++i < argc)
 	{
-		temp = ft_strjoin(temp, argv[i]);
-		i++;
+		temp = ft_strjoin(numbers, argv[i]);
+		free(numbers);
+		numbers = temp;
+		temp = ft_strjoin(numbers, " ");
+		free(numbers);
+		numbers = temp;
 	}
-	ft_printf("%s\n", temp);
-	splitted = ft_split(temp, ' ');
-	if (argc != 2)
-		free(temp);
+	splitted = ft_split(numbers, ' ');
+	free(numbers);
 	return (splitted);
 }

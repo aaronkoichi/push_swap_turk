@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 18:33:34 by zlee              #+#    #+#             */
-/*   Updated: 2025/02/27 11:07:05 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/05 09:31:06 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char *argv[])
 	else
 	{
 		numbers = ft_split_extended(argc, argv);
-		if (check_dup(numbers))
+		if (check_dup(numbers) || !check_sign(numbers))
 		{
 			free_numbers(numbers);
 			return (error_msg());

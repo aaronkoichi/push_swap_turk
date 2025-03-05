@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 13:20:15 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/04 22:05:03 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/05 08:35:17 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ void	s_stack(t_list **stacks)
 	first->next = second->next;
 	second->next = first;
 	*stacks = second;
-	// print_each_partition(*stacks);
-	// ft_printf("\n");
 }
 void	p_stack(t_list	**s_a, t_list	**s_b)
 {
@@ -93,6 +91,5 @@ void	rr_stack(t_list **stacks)
 	tmp2->next = *stacks;
 	tmp->next = NULL;
 	*stacks = tmp2;
-	// print_each_partition(*stacks);
-	// ft_printf("\n");
+
 }
