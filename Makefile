@@ -6,7 +6,7 @@
 #    By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/14 15:36:03 by zlee              #+#    #+#              #
-#    Updated: 2025/03/06 16:02:26 by zlee             ###   ########.fr        #
+#    Updated: 2025/03/06 16:43:52 by zlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,7 @@ SRC = $(DATA_PREP) $(PARSING) $(SORTING) $(TURK)\
 	  $(SRC_FOLDER)/push_swap_operation.c \
 	  $(PRINTING_FOLDER)/print_inst.c \
 	  $(SRC_FOLDER)/pre_sorting/pre_sorting.c \
+	  $(SRC_FOLDER)/optimization/push_swap_optimize.c \
 
 OBJS = $(SRC:.c=.o)
 

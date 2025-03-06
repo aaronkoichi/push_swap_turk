@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 13:50:41 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/06 14:37:34 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/06 16:47:36 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	assign_inst_individual(t_list **inst, int *rolling_a, int *rolling_b)
 		ft_lstadd_back(inst, ft_lstnew(ft_strdup("rb\n")));
 		(*rolling_b)--;
 	}
-	while (*rolling_b > 0)
+	while (*rolling_b < 0)
 	{
 		ft_lstadd_back(inst, ft_lstnew(ft_strdup("rrb\n")));
 		(*rolling_b)++;
@@ -116,15 +116,16 @@ void	trim_inst(t_list *inst, int *rolling_a, int *rolling_b)
 // 	t_list	*test;
 // 	t_list	*head;
 
-// 	ft_lstadd_back(&test, ft_lstnew(ft_strdup("sa\n")));
+// 	test = NULL;
 // 	ft_lstadd_back(&test, ft_lstnew(ft_strdup("ra\n")));
+// 	ft_lstadd_back(&test, ft_lstnew(ft_strdup("pb\n")));
 // 	ft_lstadd_back(&test, ft_lstnew(ft_strdup("pb\n")));
 // 	ft_lstadd_back(&test, ft_lstnew(ft_strdup("ra\n")));
 // 	ft_lstadd_back(&test, ft_lstnew(ft_strdup("ra\n")));
 // 	ft_lstadd_back(&test, ft_lstnew(ft_strdup("rb\n")));
 // 	ft_lstadd_back(&test, ft_lstnew(ft_strdup("rb\n")));
 // 	ft_lstadd_back(&test, ft_lstnew(ft_strdup("rra\n")));
-// 	ft_lstadd_back(&test, ft_lstnew(ft_strdup("pa\n")));
+// 	ft_lstadd_back(&test, ft_lstnew(ft_strdup("rrb\n")));
 // 	ft_lstadd_back(&test, ft_lstnew(ft_strdup("pb\n")));
 // 	head = test;
 // 	ft_printf("Instructions: ");

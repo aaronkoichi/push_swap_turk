@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 20:43:31 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/06 13:41:24 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/06 16:59:44 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	sort_two_three(t_list **s_a)
 		sort_two(s_a);
 	else
 		sort_three(s_a);
+	store_instructions(NULL, 1);
 }
 
 void	sort_two(t_list **s_a)

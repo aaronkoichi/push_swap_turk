@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 18:21:51 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/06 14:35:53 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/06 16:48:55 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,12 @@
 void	store_instructions(char *instruction, int print)
 {
 	static t_list	*instructions;
-	
+
+	if (!instructions)
+		instructions = NULL;
 	if (print == 1)
 	{
+		optimize_instructions(&instructions);
 		print_instructions(instructions);
 		ft_lstclear(&instructions, free);
 		instructions =  NULL;
