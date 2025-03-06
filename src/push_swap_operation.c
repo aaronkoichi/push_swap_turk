@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 13:20:15 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/06 16:46:28 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/06 17:08:50 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,8 @@ void	s_stack(t_list **stacks)
 	if (!stacks || !(*stacks) || !((*stacks)->next))
 		return ;
 	if (get_location(*stacks) == STK_A)
-		// ft_printf("sa\n");
 		store_instructions("sa\n", 0);
 	else
-		// ft_printf("sb\n");
 		store_instructions("sb\n", 0);
 	first = *stacks;
 	second = first->next;
@@ -41,7 +39,6 @@ void	p_stack(t_list **s_a, t_list **s_b)
 	if (get_location(*s_b) == STK_A)
 	{
 		change_location(s_b, STK_B);
-		// ft_printf("pb\n");
 		store_instructions("pb\n", 0);
 	}
 	else
@@ -64,11 +61,9 @@ void	r_stack(t_list **stacks)
 	if (!stacks || !*stacks || !(*stacks)->next)
 		return ;
 	if (get_location(*stacks) == STK_A)
-		//ft_printf("ra\n");
 		store_instructions("ra\n", 0);
 	else
 		store_instructions("rb\n", 0);
-		//ft_printf("rb\n");
 	first = *stacks;
 	(*stacks) = (*stacks)->next;
 	first->next = NULL;
@@ -83,11 +78,9 @@ void	rr_stack(t_list **stacks)
 	if (!stacks || !*stacks || !(*stacks)->next)
 		return ;
 	if (get_location(*stacks) == STK_A)
-		// ft_printf("rra\n");
 		store_instructions("rra\n", 0);
 	else
 		store_instructions("rrb\n", 0);
-		//ft_printf("rrb\n");
 	tmp = *stacks;
 	while (tmp->next->next)
 		tmp = tmp->next;

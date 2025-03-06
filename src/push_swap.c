@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 18:31:49 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/06 15:51:46 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/06 17:20:24 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	push_swap(char **n)
 	pre_sort(&s_a);
 	if (ft_lstsize(s_a) <= 3)
 		sort_two_three(&s_a);
+	else if (ft_lstsize(s_a) == 5)
+		sort_five(&s_a, &s_b);
 	else
 		turk_sort(&s_a, &s_b);
 	ft_lstclear(&s_a, free);
