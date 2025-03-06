@@ -6,13 +6,12 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 20:43:31 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/06 17:32:22 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/06 17:35:36 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-/*Function created so it will not overcomplicate things*/
 void	sort_two_three(t_list **s_a)
 {
 	if (ft_lstsize(*s_a) == 2)

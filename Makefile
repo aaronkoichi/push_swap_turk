@@ -6,7 +6,7 @@
 #    By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/14 15:36:03 by zlee              #+#    #+#              #
-#    Updated: 2025/03/06 16:43:52 by zlee             ###   ########.fr        #
+#    Updated: 2025/03/06 17:49:58 by zlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,15 +50,26 @@ SRC = $(DATA_PREP) $(PARSING) $(SORTING) $(TURK)\
 	  $(SRC_FOLDER)/pre_sorting/pre_sorting.c \
 	  $(SRC_FOLDER)/optimization/push_swap_optimize.c \
 
+BONUS = src/bonus/checker.c \
+		src/bonus/checker_main.c \
+		get_next_line.c \
+		get_next_line_utils.c \
+
 OBJS = $(SRC:.c=.o)
+
+OBJS_BONUS = $(BONUS:.c=.o)
 
 CFLAGS = -Wall -Wextra -Werror
 
 CC = cc
 
-LEAK_ERR_CHECK = -fsanitize=address -fsanitize=undefined -g3
+# LEAK_ERR_CHECK = -fsanitize=address -fsanitize=undefined -g3
 
 all : $(NAME)
+
+bonus : $(OBJS_BONUS)
+	make -C libft bonus
+	$(CC) $(CFLAGS) $(LEAK_ERR_CHECK) $^ libft/libft.a -o $@
 
 $(NAME) : $(OBJS)
 	make -C libft bonus
