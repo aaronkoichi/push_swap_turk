@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 18:26:17 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/06 13:41:29 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/06 13:52:42 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ void			push_swap(char **numbers);
 void			pre_sort(t_list **stack);
 void			set_presort_number(t_list **stack, t_list *node, int number);
 int				get_presort_num(t_list *stack);
-void			print_presort(t_list *sa);
 void			split_push(t_list **sa, t_list **sb);
 void			turk_sort(t_list **sa, t_list **sb);
 void			determine_turk_sort(t_list **sa, t_list **sb);
@@ -104,6 +103,8 @@ void			assign_inst_rr_rrr(t_list **checkpoint, int *rolling_a,
 void			assign_inst_individual(t_list **inst, int *rolling_a,
 					int *rolling_b);
 void			trim_inst(t_list *inst, int *rolling_a, int *rolling_b);
-/*Printing (for debug only)*/
-void			print_each_instructions(t_list *stack);
+/*Printing*/
+void			store_instructions(char *instruction, int print);
+void			print_instructions(t_list *instructions);
+
 #endif

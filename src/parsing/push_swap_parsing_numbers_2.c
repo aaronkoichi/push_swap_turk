@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 22:09:12 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/05 09:32:27 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/06 14:36:43 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,8 @@ int	check_dup(char **argv)
 int	check_sign(char **numbers)
 {
 	int		i;
-	int		j;
 	char	**temp;
-	int		sign;
 
-	sign = 0;
 	temp = numbers;
 	i = -1;
 	while (temp[++i])

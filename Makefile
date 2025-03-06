@@ -6,7 +6,7 @@
 #    By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/14 15:36:03 by zlee              #+#    #+#              #
-#    Updated: 2025/03/04 22:15:31 by zlee             ###   ########.fr        #
+#    Updated: 2025/03/06 14:36:11 by zlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ TURK =  $(TURK_FOLDER)/turk_sort_main.c \
 
 SORTING = $(SORTING_FOLDER)/check_sorted.c \
 		  $(SORTING_FOLDER)/retrieve_data.c \
+		  $(SORTING_FOLDER)/retrieve_data_location.c \
 		  $(SORTING_FOLDER)/sort_two_three.c \
 
 SRC = $(DATA_PREP) $(PARSING) $(SORTING) $(TURK)\
@@ -47,10 +48,11 @@ SRC = $(DATA_PREP) $(PARSING) $(SORTING) $(TURK)\
 	  $(SRC_FOLDER)/push_swap_operation.c \
 	  $(PRINTING_FOLDER)/print_inst.c \
 	  $(SRC_FOLDER)/pre_sorting/pre_sorting.c \
+	  $(SRC_FOLDER)/optimization/push_swap_optimize.c
 
 OBJS = $(SRC:.c=.o)
 
-# CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 CC = cc
 
