@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 20:43:31 by zlee              #+#    #+#             */
-/*   Updated: 2025/02/27 11:11:56 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/06 13:41:24 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,6 @@ void	sort_two_three(t_list **s_a)
 void	sort_two(t_list **s_a)
 {
 	if (get_number_node(*s_a) > get_number_node((*s_a)->next))
-		s_stack(s_a);
-}
-
-void	sort_two_inv(t_list **s_a)
-{
-	if (get_number_node(*s_a) < get_number_node((*s_a)->next))
 		s_stack(s_a);
 }
 

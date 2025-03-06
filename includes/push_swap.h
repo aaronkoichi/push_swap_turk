@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 18:26:17 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/05 09:23:57 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/06 13:41:29 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ int				get_p(t_list *s);
 void			free_tdata(t_d *data);
 /*Simple sort for partitions*/
 void			sort_two(t_list **s_a);
-void			sort_two_inv(t_list **s_a);
 void			sort_two_three(t_list **s_a);
 void			sort_three(t_list **s_a);
 /*data prepping*/
@@ -98,6 +97,13 @@ void			determine_rotate_mid_small(t_list *sa, t_list **sb,
 void			determine_rotate_large(t_list *sa, t_list **sb, t_list *target,
 					t_list *node);
 int				check_sign(char **numbers);
+int				compare_rotate(char *content);
+void			optimize_instructions(t_list **inst);
+void			assign_inst_rr_rrr(t_list **checkpoint, int *rolling_a,
+					int *rolling_b);
+void			assign_inst_individual(t_list **inst, int *rolling_a,
+					int *rolling_b);
+void			trim_inst(t_list *inst, int *rolling_a, int *rolling_b);
 /*Printing (for debug only)*/
 void			print_each_instructions(t_list *stack);
 #endif
