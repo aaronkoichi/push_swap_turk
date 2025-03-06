@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 22:09:12 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/05 09:32:39 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/06 15:32:32 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	num_check(char *string)
 	word_count = 0;
 	while (*string != 0)
 	{
+		if (in_words && (*string == '-' || *string == '+'))
+			return (-1);
 		if ((*string == '-' || *string == '+' || (*string >= '0'
 					&& *string <= '9')) && !in_words)
 		{

@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 22:09:12 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/06 14:36:43 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/06 15:49:14 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,51 @@ int	check_sign(char **numbers)
 	{
 		if ((temp[i][0] == '+' || temp[i][0] == '-') && (temp[i][1] != 0
 				&& (temp[i][1] < '0' || temp[i][1] > '9')))
+			return (0);
+	}
+	return (1);
+}
+
+static int	count_ws(const char *nptr)
+{
+	int	index;
+
+	index = 0;
+	while (nptr[index] == 32 || (nptr[index] >= 9 && nptr[index] <= 13))
+		index++;
+	return (index);
+}
+
+long	ft_atol(const char *nptr)
+{
+	long	multiple;
+	long	index;
+	long	total;
+
+	multiple = 1;
+	total = 0;
+	index = count_ws(nptr);
+	if (nptr[index] == '-' || nptr[index] == '+')
+		if (nptr[index++] == '-')
+			multiple = -1;
+	while (nptr[index] >= '0' && nptr[index] <= '9')
+		total = (total * 10) + (nptr[index++] - 48);
+	return (total * multiple);
+}
+
+int	check_long(char **numbers)
+{
+	int i;
+
+	i = -1;
+	while (numbers[++i])
+	{
+		if (ft_strlen(numbers[0]) >= 12)
+			return (0);
+		if (ft_strlen(numbers[0]) == 1 && (numbers[0][0] == '+'
+				|| numbers[0][0] == '-'))
+			return (0);
+		if (ft_atol(numbers[0]) > INT_MAX || ft_atol(numbers[0]) < INT_MIN)
 			return (0);
 	}
 	return (1);

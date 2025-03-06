@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 22:43:57 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/06 13:55:42 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/06 15:11:09 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,4 @@ void	turk_sort(t_list **sa, t_list **sb)
 		r_all(sa, node);
 	else
 		rr_all(sa, node);
-	store_instructions(NULL, 1);
 }
