@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 18:26:17 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/07 11:02:05 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/08 03:02:13 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ int				get_index(t_list *s);
 void			free_tdata(t_d *data);
 int				check_long(char **numbers);
 long			ft_atol(const char *nptr);
-int				check_sign(char **numbers);
 /*Simple sort for partitions*/
 void			sort_two(t_list **s_a);
 void			sort_two_three(t_list **s_a);

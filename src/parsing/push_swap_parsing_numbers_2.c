@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 22:09:12 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/07 10:45:39 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/08 03:02:02 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,6 @@ int	check_dup(char **argv)
 		}
 	}
 	return (0);
-}
-
-int	check_sign(char **numbers)
-{
-	int		i;
-	char	**temp;
-
-	temp = numbers;
-	i = -1;
-	while (temp[++i])
-	{
-		if ((temp[i][0] == '+' || temp[i][0] == '-') && (temp[i][1] != 0
-				&& (temp[i][1] < '0' || temp[i][1] > '9')))
-			return (0);
-	}
-	return (1);
 }
 
 static int	count_ws(const char *nptr)
