@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 22:09:12 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/06 15:32:32 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/07 23:55:55 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	input_check(int argc, char **argv)
 		while (++i < argc)
 		{
 			temp = num_check(argv[i]);
-			if (temp == -1)
+			if (temp == -1 || temp == 0)
 				return (error_msg());
 			count += temp;
 		}
