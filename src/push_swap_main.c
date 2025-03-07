@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 18:33:34 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/06 15:42:36 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/07 23:58:10 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ int	main(int argc, char *argv[])
 	checker = 0;
 	if (argc == 1)
 		return (0);
-	else if (argc == 2 && argv[1][0] == 0)
-		return (error_msg());
 	checker = input_check(argc, argv);
 	if (checker == -1)
 		return (0);

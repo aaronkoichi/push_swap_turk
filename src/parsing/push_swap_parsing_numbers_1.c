@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 22:09:12 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/07 23:55:55 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/07 23:57:58 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int	input_check(int argc, char **argv)
 			count += temp;
 		}
 	}
-	if (count == -1)
+	if (count == -1 || count == 0)
 		return (error_msg());
 	return (count);
 }
