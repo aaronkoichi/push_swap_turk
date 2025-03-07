@@ -6,7 +6,7 @@
 #    By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/14 15:36:03 by zlee              #+#    #+#              #
-#    Updated: 2025/03/07 11:09:44 by zlee             ###   ########.fr        #
+#    Updated: 2025/03/07 14:01:11 by zlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ TURK =  $(TURK_FOLDER)/turk_sort_main.c \
 SORTING = $(SORTING_FOLDER)/check_sorted.c \
 		  $(SORTING_FOLDER)/retrieve_data.c \
 		  $(SORTING_FOLDER)/retrieve_data_location.c \
-		  $(SORTING_FOLDER)/sort_two_three.c \
+		  $(SORTING_FOLDER)/sort_below_five.c \
 
 SRC = $(DATA_PREP) $(PARSING) $(SORTING) $(TURK)\
 	  $(SRC_FOLDER)/push_swap.c \
