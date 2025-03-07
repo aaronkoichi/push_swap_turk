@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 20:43:31 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/07 10:50:08 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/07 11:01:43 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ t_list	*get_small_node(t_list *stack)
 	return (node);
 }
 
-void	sort_five(t_list **sa, t_list **sb)
+void	sort_four_five(t_list **sa, t_list **sb)
 {
 	t_list	*node;
 
@@ -65,7 +65,7 @@ void	sort_five(t_list **sa, t_list **sb)
 		reindex_stack(sa, sb);
 	}
 	sort_three(sa);
-	p_stack(sa, sb);
-	p_stack(sa, sb);
+	while (*sb)
+		p_stack(sa, sb);
 	store_instructions(NULL, 1);
 }

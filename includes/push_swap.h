@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 18:26:17 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/07 09:14:53 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/07 11:02:05 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,6 @@ void			s_stack(t_list **stacks);
 void			p_stack(t_list **stack_a, t_list **stack_b);
 void			r_stack(t_list **stacks);
 void			rr_stack(t_list **stacks);
-/*Make above sorting into one function for simplicity*/
-void			r_rr_bot(t_list **s1, t_list **s2, t_list *node, int partition);
-void			r_rr_top(t_list **s1, t_list **s2, t_list *node, int partition);
 /*parsing*/
 int				num_check(char *string);
 int				error_msg(void);
@@ -46,28 +43,22 @@ int				input_check(int argc, char **argv);
 int				check_dup(char **argv);
 int				get_number_node(t_list *s);
 int				get_index(t_list *s);
-int				get_p(t_list *s);
 void			free_tdata(t_d *data);
 int				check_long(char **numbers);
 long			ft_atol(const char *nptr);
-
+int				check_sign(char **numbers);
 /*Simple sort for partitions*/
 void			sort_two(t_list **s_a);
 void			sort_two_three(t_list **s_a);
 void			sort_three(t_list **s_a);
+void			sort_four_five(t_list **sa, t_list **sb);
 /*data prepping*/
 void			reindex_stack(t_list **stack_a, t_list **stack_b);
-void			ft_swap(t_list **s1, t_list **s2);
-void			deter_rotate_stk(t_list **stk, t_list *target_n);
-void			r_stk(t_list **stk, t_list *target_n);
-void			rr_stk(t_list **stk, t_list *target_n);
 /*checking*/
 int				is_sorted(t_list *s);
 void			change_location(t_list **stack, enum e_stk loc);
 enum e_stk		get_location(t_list *stack);
-int				get_par(t_list *stack);
 /*Turk Sort Functions*/
-void			print_each_partition(t_list *stacks);
 t_d				*prep_data(int index, int numbers);
 char			**ft_split_extended(int argc, char **argv);
 /*Turk*/
@@ -95,12 +86,10 @@ void			ra_instructions(t_list **sb, t_list *target);
 void			rra_instructions(t_list *sa, t_list **sb, t_list *target);
 void			rb_instructions(t_list **sb, t_list *node);
 void			rrb_instructions(t_list *stack, t_list **sb, t_list *node);
-/**/
 void			determine_rotate_mid_small(t_list *sa, t_list **sb,
 					t_list *target, t_list *node);
 void			determine_rotate_large(t_list *sa, t_list **sb, t_list *target,
 					t_list *node);
-int				check_sign(char **numbers);
 int				compare_rotate(char *content);
 void			optimize_instructions(t_list **inst);
 void			assign_inst_rr_rrr(t_list **checkpoint, int *rolling_a,
@@ -111,7 +100,6 @@ void			trim_inst(t_list *inst, int *rolling_a, int *rolling_b);
 /*Printing*/
 void			store_instructions(char *instruction, int print);
 void			print_instructions(t_list *instructions);
-void			sort_five(t_list **sa, t_list **sb);
 t_list			*get_small_node(t_list *stack);
 
 /*BONUS: Push Swap Checker*/
