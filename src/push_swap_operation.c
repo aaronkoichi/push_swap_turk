@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 13:20:15 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/06 17:08:50 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/07 10:37:18 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	s_stack(t_list **stacks)
 	second->next = first;
 	*stacks = second;
 }
+
 void	p_stack(t_list **s_a, t_list **s_b)
 {
 	t_list	*current_node;

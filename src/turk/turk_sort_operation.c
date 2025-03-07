@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 23:29:32 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/04 21:45:57 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/07 10:51:47 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ t_list	*find_cheapest(t_list *stack)
 	t_list	*node;
 	t_d		*stack_data;
 	t_d		*node_data;
-	
+
 	node = stack;
 	node_data = (t_d *)node->content;
 	while (stack)

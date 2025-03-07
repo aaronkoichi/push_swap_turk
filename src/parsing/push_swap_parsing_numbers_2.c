@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 22:09:12 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/06 15:49:14 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/07 10:45:39 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ long	ft_atol(const char *nptr)
 
 int	check_long(char **numbers)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (numbers[++i])
@@ -88,7 +88,7 @@ int	check_long(char **numbers)
 		if (ft_strlen(numbers[0]) >= 12)
 			return (0);
 		if (ft_strlen(numbers[0]) == 1 && (numbers[0][0] == '+'
-				|| numbers[0][0] == '-'))
+			|| numbers[0][0] == '-'))
 			return (0);
 		if (ft_atol(numbers[0]) > INT_MAX || ft_atol(numbers[0]) < INT_MIN)
 			return (0);

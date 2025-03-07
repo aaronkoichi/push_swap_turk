@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 07:27:57 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/05 13:47:52 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/07 10:50:49 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ t_list	*find_small(t_list *stack)
 /*Used when unable to find the middle point to push the number.*/
 t_list	*find_large(t_list *stack)
 {
-	t_list *temp;
+	t_list	*temp;
 
 	temp = stack;
 	while (stack)

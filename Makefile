@@ -6,11 +6,13 @@
 #    By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/14 15:36:03 by zlee              #+#    #+#              #
-#    Updated: 2025/03/06 17:49:58 by zlee             ###   ########.fr        #
+#    Updated: 2025/03/07 10:43:47 by zlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
+
+BONUS_NAME = checker
 
 PARSING_FOLDER = ./src/parsing
 
@@ -49,11 +51,22 @@ SRC = $(DATA_PREP) $(PARSING) $(SORTING) $(TURK)\
 	  $(PRINTING_FOLDER)/print_inst.c \
 	  $(SRC_FOLDER)/pre_sorting/pre_sorting.c \
 	  $(SRC_FOLDER)/optimization/push_swap_optimize.c \
+	  $(SRC_FOLDER)/optimization/push_swap_assign_inst.c \
 
-BONUS = src/bonus/checker.c \
+BONUS = get_next_line/get_next_line.c \
+		get_next_line/get_next_line_utils.c \
+		$(PARSING) $(DATA_PREP) \
+		$(SORTING_FOLDER)/check_sorted.c \
+		$(SORTING_FOLDER)/retrieve_data.c \
+		$(SORTING_FOLDER)/retrieve_data_location.c \
+		$(SRC_FOLDER)/optimization/push_swap_optimize.c \
+		$(SRC_FOLDER)/push_swap_operation.c \
+		$(TURK_FOLDER)/turk_sort_execution.c \
+		$(PRINTING_FOLDER)/print_inst.c \
+		$(SRC_FOLDER)/pre_sorting/pre_sorting.c \
+		src/bonus/checker.c \
 		src/bonus/checker_main.c \
-		get_next_line.c \
-		get_next_line_utils.c \
+		
 
 OBJS = $(SRC:.c=.o)
 
@@ -63,11 +76,13 @@ CFLAGS = -Wall -Wextra -Werror
 
 CC = cc
 
-# LEAK_ERR_CHECK = -fsanitize=address -fsanitize=undefined -g3
+LEAK_ERR_CHECK = -fsanitize=address -fsanitize=undefined -g3
 
 all : $(NAME)
 
-bonus : $(OBJS_BONUS)
+bonus : $(BONUS_NAME)
+
+$(BONUS_NAME) :$(OBJS_BONUS)
 	make -C libft bonus
 	$(CC) $(CFLAGS) $(LEAK_ERR_CHECK) $^ libft/libft.a -o $@
 
@@ -80,12 +95,12 @@ $(NAME) : $(OBJS)
 
 clean:
 	make -C libft clean
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(OBJS_BONUS)
 
 fclean : clean
 	cd libft && rm -f libft.a
-	rm -f $(NAME)
+	rm -f $(NAME) $(BONUS_NAME)
 
 re : fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

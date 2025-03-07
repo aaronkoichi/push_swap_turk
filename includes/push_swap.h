@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 18:26:17 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/06 17:31:49 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/07 09:14:53 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,4 +113,10 @@ void			store_instructions(char *instruction, int print);
 void			print_instructions(t_list *instructions);
 void			sort_five(t_list **sa, t_list **sb);
 t_list			*get_small_node(t_list *stack);
+
+/*BONUS: Push Swap Checker*/
+void			ps_checker(char **n);
+int				check_commands(char *inst);
+int				prompt_inst(char **string, t_list **instructions);
+void			process_instructions(t_list **sa, t_list **sb);
 #endif

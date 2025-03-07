@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 19:14:59 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/05 13:48:05 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/07 10:33:52 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,10 @@
 /*Based on the instruction listed by the node, excecute them .*/
 void	execute_push(t_list **sa, t_list **sb, t_list *node)
 {
-	t_d		*data;
-	t_list	*instructions;
-
-	data = (t_d *)node->content;
-	instructions = data->moves;
-	while (instructions)
+	while (node)
 	{
-		node_execution(sa, sb, instructions);
-		instructions = instructions->next;
+		node_execution(sa, sb, node);
+		node = node->next;
 	}
 	return ;
 }

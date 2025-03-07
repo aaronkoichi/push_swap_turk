@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 17:18:56 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/06 14:58:45 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/07 10:47:52 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ int	get_index(t_list *s)
 
 void	reindex_stack(t_list **stack_a, t_list **stack_b)
 {
-	t_list *head;
-	int	i;
+	t_list	*head;
+	int		i;
+
 	i = 0;
 	head = *stack_a;
 	while (*stack_a != NULL)
@@ -53,7 +54,7 @@ int	get_presort_num(t_list *stack)
 /*Access the node to write the pre-sorted number.*/
 void	set_presort_number(t_list **stack, t_list *node, int number)
 {
-	t_list *head;
+	t_list	*head;
 
 	head = *stack;
 	while (*stack)
