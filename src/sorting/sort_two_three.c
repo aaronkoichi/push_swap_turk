@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 20:43:31 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/07 11:01:43 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/07 11:43:34 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ void	sort_four_five(t_list **sa, t_list **sb)
 	t_list	*node;
 
 	node = NULL;
+	if (is_sorted(*sa))
+		return ;
 	while (ft_lstsize(*sa) > 3)
 	{
 		node = get_small_node(*sa);
