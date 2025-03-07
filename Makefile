@@ -6,7 +6,7 @@
 #    By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/14 15:36:03 by zlee              #+#    #+#              #
-#    Updated: 2025/03/07 10:43:47 by zlee             ###   ########.fr        #
+#    Updated: 2025/03/07 11:09:44 by zlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,7 @@ BONUS = get_next_line/get_next_line.c \
 		$(SORTING_FOLDER)/retrieve_data.c \
 		$(SORTING_FOLDER)/retrieve_data_location.c \
 		$(SRC_FOLDER)/optimization/push_swap_optimize.c \
+		$(SRC_FOLDER)/optimization/push_swap_assign_inst.c \
 		$(SRC_FOLDER)/push_swap_operation.c \
 		$(TURK_FOLDER)/turk_sort_execution.c \
 		$(PRINTING_FOLDER)/print_inst.c \
@@ -76,7 +77,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 CC = cc
 
-LEAK_ERR_CHECK = -fsanitize=address -fsanitize=undefined -g3
+# LEAK_ERR_CHECK = -fsanitize=address -fsanitize=undefined -g3
 
 all : $(NAME)
 
