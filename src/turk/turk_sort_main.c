@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 22:43:57 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/07 11:38:47 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/08 12:04:23 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,17 @@ void	split_push(t_list **sa, t_list **sb)
 		else
 			p_stack(sb, sa);
 	}
-	reindex_stack(sa, sb);
 	sort_three(sa);
 }
 
 void	turk_sort(t_list **sa, t_list **sb)
 {
 	t_list	*node;
-	int		size;
+	int		median;
 
 	if (is_sorted(*sa))
 		return ;
-	size = ft_lstsize(*sa) / 2;
+	median = ft_lstsize(*sa) / 2;
 	split_push(sa, sb);
 	reindex_stack(sa, sb);
 	while (*sb)
@@ -54,7 +53,7 @@ void	turk_sort(t_list **sa, t_list **sb)
 		reindex_stack(sa, sb);
 	}
 	node = find_small(*sa);
-	if (get_index(node) < size)
+	if (get_index(node) < median)
 		r_all(sa, node);
 	else
 		rr_all(sa, node);
