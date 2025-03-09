@@ -6,11 +6,10 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 17:37:21 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/07 10:38:01 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/09 14:50:30 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../get_next_line/get_next_line.h"
 #include "../../includes/push_swap.h"
 
 void	ps_checker(char **n)
