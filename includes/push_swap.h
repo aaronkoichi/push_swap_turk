@@ -6,14 +6,13 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 18:26:17 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/09 14:50:43 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/09 22:50:17 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include "../libft/libft.h"
-# include "../get_next_line/get_next_line.h"
 # include <limits.h>
 
 enum			e_stk

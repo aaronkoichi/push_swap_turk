@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 20:25:21 by zlee              #+#    #+#             */
-/*   Updated: 2025/01/17 17:59:18 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/09 22:48:17 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include <sys/select.h>
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1024
 # endif

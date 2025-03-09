@@ -6,7 +6,7 @@
 #    By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/14 15:36:03 by zlee              #+#    #+#              #
-#    Updated: 2025/03/07 14:01:11 by zlee             ###   ########.fr        #
+#    Updated: 2025/03/09 22:49:08 by zlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,9 +53,7 @@ SRC = $(DATA_PREP) $(PARSING) $(SORTING) $(TURK)\
 	  $(SRC_FOLDER)/optimization/push_swap_optimize.c \
 	  $(SRC_FOLDER)/optimization/push_swap_assign_inst.c \
 
-BONUS = get_next_line/get_next_line.c \
-		get_next_line/get_next_line_utils.c \
-		$(PARSING) $(DATA_PREP) \
+BONUS = $(PARSING) $(DATA_PREP) \
 		$(SORTING_FOLDER)/check_sorted.c \
 		$(SORTING_FOLDER)/retrieve_data.c \
 		$(SORTING_FOLDER)/retrieve_data_location.c \

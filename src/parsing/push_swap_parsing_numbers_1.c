@@ -6,12 +6,11 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 22:09:12 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/07 23:57:58 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/09 22:50:57 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
-#include "../../libft/libft.h"
+#include "../includes/push_swap.h"
 
 int	num_check(char *string)
 {
