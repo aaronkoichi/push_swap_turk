@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 07:48:44 by zlee              #+#    #+#             */
-/*   Updated: 2024/12/08 13:44:13 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/12 15:08:01 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,19 +95,18 @@ static char	*ft_buf_prep(char **result, char **buffer)
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer[FD_SETSIZE];
+	static char	*buffer;
 	char		*result;
 	char		*temp;
 
-	result = NULL;
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	if (!fd_check(&buffer, fd))
 		return (NULL);
 	result = ft_calloc(1, 1);
 	if (!result)
 		return (NULL);
 	read_buffer(fd, &result);
-	if (buffer[fd] != NULL)
-		result = ft_buf_prep(&result, &buffer[fd]);
+	if (buffer != NULL)
+		result = ft_buf_prep(&result, &buffer);
 	if (!result || *result == 0)
 	{
 		free(result);
@@ -115,7 +114,7 @@ char	*get_next_line(int fd)
 	}
 	if (ft_strchr(result, '\n'))
 	{
-		buffer[fd] = ft_mk_buffer(buffer[fd], result);
+		buffer = ft_mk_buffer(buffer, result);
 		temp = ft_spt_result(result);
 		result = temp;
 	}

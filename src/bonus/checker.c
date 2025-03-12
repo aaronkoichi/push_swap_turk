@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 17:37:21 by zlee              #+#    #+#             */
-/*   Updated: 2025/03/09 14:50:30 by zlee             ###   ########.fr       */
+/*   Updated: 2025/03/12 15:08:20 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,15 @@ int	check_commands(char *inst)
 	return (0);
 }
 
+static void	flush_buffer(char **string)
+{
+	while (*string)
+	{
+		free(*string);
+		*string = get_next_line(-1);
+	}
+}
+
 int	prompt_inst(char **string, t_list **instructions)
 {
 	int	checker;
@@ -55,7 +64,7 @@ int	prompt_inst(char **string, t_list **instructions)
 		{
 			checker = 0;
 			error_msg();
-			free(*string);
+			flush_buffer(string);
 			*string = NULL;
 			break ;
 		}
@@ -79,7 +88,10 @@ void	process_instructions(t_list **sa, t_list **sb)
 	if (!checker)
 	{
 		if (instructions)
+		{
 			ft_lstclear(&instructions, free);
+			instructions = NULL;
+		}
 		return ;
 	}
 	execute_push(sa, sb, instructions);
